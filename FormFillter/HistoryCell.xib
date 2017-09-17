@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="94" id="KGk-i7-Jjw" customClass="HistoryCell" customModule="FormFillter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Knu-Ga-ZII">
+                        <rect key="frame" x="32" y="25" width="44" height="44"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.40095248287671231" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="3dF-66-NXh"/>
+                            <constraint firstAttribute="width" constant="44" id="txq-P7-S5v"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self-Certification for Entities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btp-w5-Etv">
+                        <rect key="frame" x="84" y="25" width="228" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="GDO-2i-6gA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/11/2017 12:46 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXb-MT-AmR">
+                        <rect key="frame" x="85" y="49" width="226" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="hBs-2C-cKq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Btp-w5-Etv" firstAttribute="top" secondItem="Knu-Ga-ZII" secondAttribute="top" id="0LR-3h-rdf"/>
+                    <constraint firstItem="Knu-Ga-ZII" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GuX-Dd-9oC"/>
+                    <constraint firstItem="Knu-Ga-ZII" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="Ldh-z4-Rth"/>
+                    <constraint firstAttribute="trailing" secondItem="Btp-w5-Etv" secondAttribute="trailing" constant="8" id="Pr3-Gb-yM6"/>
+                    <constraint firstItem="uXb-MT-AmR" firstAttribute="leading" secondItem="Knu-Ga-ZII" secondAttribute="trailing" constant="9" id="bwm-1h-AfZ"/>
+                    <constraint firstItem="Btp-w5-Etv" firstAttribute="leading" secondItem="Knu-Ga-ZII" secondAttribute="trailing" constant="8" id="cXf-hB-3h3"/>
+                    <constraint firstAttribute="trailing" secondItem="uXb-MT-AmR" secondAttribute="trailing" constant="9" id="n2n-Xc-Swp"/>
+                    <constraint firstItem="uXb-MT-AmR" firstAttribute="bottom" secondItem="Knu-Ga-ZII" secondAttribute="bottom" id="pFj-ek-bd2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="icon" destination="Knu-Ga-ZII" id="0gX-SU-JCc"/>
+                <outlet property="timeStamp" destination="uXb-MT-AmR" id="UN1-0Q-cf8"/>
+                <outlet property="titleLabel" destination="Btp-w5-Etv" id="uXn-af-0Up"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="77"/>
+        </tableViewCell>
+    </objects>
+</document>
