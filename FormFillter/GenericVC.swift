@@ -15,6 +15,7 @@ class GenericVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var list: UITableView!
     @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var top: NSLayoutConstraint!
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
@@ -23,7 +24,6 @@ class GenericVC: UIViewController {
     fileprivate let titles = ["Scan&Found Vibration",
                               "Email Notification",
                               "Introduction"]
-    fileprivate let history = [("Self-Certification for Entities","09/11/2017 12:46 PM")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,22 +70,31 @@ class GenericVC: UIViewController {
     @IBAction func performAction(_ sender: UIButton) {
         sender.isEnabled = false
         startSpinning()
+        
         UIView.animate(withDuration: 0.5, animations: {
             self.titleLabel.layer.transform = CATransform3DRotate(CATransform3DIdentity, 10, 0, 1, 0)
+            if sender.tag == 2{
+                self.searchBar.frame = CGRect(origin: CGPoint(x:0,y:0),
+                                              size: self.searchBar.bounds.size)
+            }
         }) { (success) in
             UIView.animate(withDuration: 0.5, animations: {
-                self.titleLabel.text = self.titleLabel.text == "Recents" ? "Settings" : "Recents"
+                self.titleLabel.text = sender.tag == 2 ? "Settings" : "Recents"
                 if self.titleLabel.text == "Recents" {
+                    self.top.constant = 0
                     self.rightBtn.setImage(AssetManager.delete, for: .normal)
                 }else{
+                    self.top.constant = -66
                     self.rightBtn.setImage(AssetManager.power, for: .normal)
                 }
                 self.rightBtn.transform = .identity
                 self.titleLabel.layer.transform = CATransform3DIdentity
                 sender.isEnabled = true
-                DispatchQueue.main.async {
-                    self.list.reloadData()
-                    self.rightBtn.layer.removeAllAnimations()
+                self.list.reloadData()
+                self.rightBtn.layer.removeAllAnimations()
+                if sender.tag == 1 {
+                    self.searchBar.frame = CGRect(origin: CGPoint(x:0,y:66),
+                                                  size: self.searchBar.bounds.size)
                 }
             })
         }
@@ -108,14 +117,14 @@ extension GenericVC:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleLabel.text == "Recents" ? history.count : 1
+        return titleLabel.text == "Recents" ? Utility.history.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if titleLabel.text == "Recents" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
-            cell.titleLabel.text = history[indexPath.row].0
-            cell.timeStamp.text = history[indexPath.row].1
+            cell.titleLabel.text = Utility.history[indexPath.row].0
+            cell.timeStamp.text = Utility.history[indexPath.row].1
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath) as! SettingCell

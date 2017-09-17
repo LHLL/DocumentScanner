@@ -57,6 +57,8 @@
 		BA852D491F6F0944004E43AF /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA852D471F6F0944004E43AF /* HistoryCell.xib */; };
 		BA852D4C1F6F1D18004E43AF /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA852D4B1F6F1D18004E43AF /* AssetManager.swift */; };
 		BA852D4E1F6F2028004E43AF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA852D4D1F6F2028004E43AF /* Utility.swift */; };
+		BA852D511F6F24FC004E43AF /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA852D4F1F6F24FC004E43AF /* ErrorView.swift */; };
+		BA852D521F6F24FC004E43AF /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA852D501F6F24FC004E43AF /* ErrorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,6 +220,8 @@
 		BA852D471F6F0944004E43AF /* HistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		BA852D4B1F6F1D18004E43AF /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
 		BA852D4D1F6F2028004E43AF /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		BA852D4F1F6F24FC004E43AF /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		BA852D501F6F24FC004E43AF /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +268,8 @@
 		AE4548E41F69EBC500217184 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA852D4F1F6F24FC004E43AF /* ErrorView.swift */,
+				BA852D501F6F24FC004E43AF /* ErrorView.xib */,
 				AE6CBBFF1F689E30005FFA9F /* SignatureView.swift */,
 				AE6CBC001F689E30005FFA9F /* SignatureView.xib */,
 				AE6CBBF01F689AC5005FFA9F /* Main.storyboard */,
@@ -471,8 +477,7 @@
 		AE6CBBEB1F689AC5005FFA9F /* FormFillter */ = {
 			isa = PBXGroup;
 			children = (
-				BA852D4B1F6F1D18004E43AF /* AssetManager.swift */,
-				BA852D4D1F6F2028004E43AF /* Utility.swift */,
+				BA852D531F6F28DD004E43AF /* Model */,
 				AE454A991F69F97200217184 /* Unity */,
 				BA852D4A1F6F1D03004E43AF /* Controller */,
 				AE4548E41F69EBC500217184 /* View */,
@@ -508,6 +513,15 @@
 				AE96FC401F6C78D4007D504F /* GenericVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA852D531F6F28DD004E43AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA852D4B1F6F1D18004E43AF /* AssetManager.swift */,
+				BA852D4D1F6F2028004E43AF /* Utility.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,6 +589,7 @@
 				AE6CBBF71F689AC5005FFA9F /* LaunchScreen.storyboard in Resources */,
 				AECF465C1F6B20B600965A73 /* TradingDoc.xml in Resources */,
 				AE454B121F69FAE700217184 /* Simple.fragsh in Resources */,
+				BA852D521F6F24FC004E43AF /* ErrorView.xib in Resources */,
 				AE6CBBF41F689AC5005FFA9F /* Assets.xcassets in Resources */,
 				AE6CBBF21F689AC5005FFA9F /* Main.storyboard in Resources */,
 				AE5BF3A11F6C57DD000C5728 /* ionicons.ttf in Resources */,
@@ -620,6 +635,7 @@
 				AECF46581F6B1E0700965A73 /* UnityHelper.m in Sources */,
 				AE454B171F69FAE700217184 /* SampleApplicationShaderUtils.m in Sources */,
 				AE454B1A1F69FAE700217184 /* Texture.mm in Sources */,
+				BA852D511F6F24FC004E43AF /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

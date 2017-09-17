@@ -13,6 +13,8 @@ struct Utility {
     
     private init(){}
     
+    static var history = [("Self-Certification for Entities","09/11/2017 12:46 PM")]
+    
     static var enableVibration = true
     
     static private var type:Bool {
@@ -43,5 +45,9 @@ struct Utility {
         }else{
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
         }
+    }
+    
+    static func generateTimeStamp(){
+        
     }
 }
